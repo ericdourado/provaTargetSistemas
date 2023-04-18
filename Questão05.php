@@ -1,5 +1,5 @@
 <?php
-$input_string = 'KLEVISON';
+$input_string = 'KLEVISON'; //DIGITE AQUI A STRING PARA SER REALIZADO A INVERSÃO
 $input_string_invertida = '';
 $tamanho_string = strlen($input_string);
 
