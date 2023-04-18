@@ -125,16 +125,27 @@ $put_data = json_decode(
     ]'
 );
 
+
+foreach ($put_data as $value) {
+    if ($value->valor == 0.00){
+        continue;
+    }
+    $dia +=1;
+    $valor_media_faturamento += $value->valor; 
+}
+$valor_media_faturamento /= $dia;
 $menor_valor = 99999999999;
 $maior_valor = 0;
+$dia = 0;
 foreach ($put_data as $value) {
     if ($value->valor == 0){
         continue;
     }
-    
     $menor_valor = $value->valor < $menor_valor ? $value->valor : $menor_valor;  
-    $maior_valor = $value->valor > $maior_valor ? $value->valor : $maior_valor;  
-
+    $maior_valor = $value->valor > $maior_valor ? $value->valor : $maior_valor; 
+    $dia = $value->valor > $valor_media_faturamento ? $dia += 1 : $dia;
 }
+
 echo $menor_valor.PHP_EOL;
-echo $maior_valor;
+echo $maior_valor.PHP_EOL;
+echo $dia;
