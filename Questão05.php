@@ -8,3 +8,4 @@ for ($i = $tamanho_string; $i > -1; $i--) {
 }
 echo $input_string_invertida;
 
+// RETORNO DO CONSOLE: NOSIVELK
